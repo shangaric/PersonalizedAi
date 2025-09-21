@@ -1,77 +1,30 @@
-<<<<<<< HEAD
-# PersonalizedAi
-=======
-# 🎯 Personalized AI Career Advisor
+# Personalized Career and Skills Advisor 🎯
 
-An intelligent platform that provides personalized career guidance and learning roadmaps for Indian students, helping them navigate the evolving job market with AI-powered insights and recommendations.
-
-![Platform Preview](https://img.shields.io/badge/Status-Production%20Ready-green)
-![React](https://img.shields.io/badge/React-19.1.1-blue)
-![Node.js](https://img.shields.io/badge/Node.js-Express-orange)
-![AI](https://img.shields.io/badge/AI-OpenAI%20GPT--4-purple)
-![Database](https://img.shields.io/badge/Database-MongoDB%20%2B%20ChromaDB-green)
+An AI-powered platform that provides personalized career guidance and learning roadmaps for Indian students, helping them navigate the evolving job market with confidence.
 
 ## 🌟 Features
 
-### 🤖 AI-Powered Personalization
-- **RAG System**: Real-time career data fetching using ChromaDB vector database
-- **Smart Recommendations**: GPT-4 powered career path suggestions based on user profile
-- **Semantic Search**: Find relevant careers using natural language queries
-- **Context-Aware Chatbot**: 24/7 AI assistant for career guidance
+### Core Functionality
+- **Personalized Career Recommendations** - AI-driven career path suggestions based on user profile
+- **Interactive Career Explorer** - Browse and filter career paths by field, domain, and skills
+- **Learning Roadmaps** - Detailed, phase-based learning paths with milestones and resources
+- **Skills Mapping** - Track skill development across different proficiency levels
+- **AI Chatbot** - 24/7 career guidance and learning support
+- **Google Calendar Integration** - Schedule learning sessions and track progress
+- **Real-time Job Market Data** - RAG system with latest career requirements and trends
 
-### 📊 Career Exploration
-- **Interactive Dashboard**: Beautiful UI with career match scores and progress tracking
-- **Field-Based Filtering**: Browse careers by engineering fields (CSE, ECE, Mechanical, etc.)
-- **Domain Specialization**: Explore specific domains like AI/ML, Cybersecurity, DevOps, Data Science
-- **Real-time Market Data**: Latest salary ranges, job demand, and company insights
-
-### 🛤️ Learning Roadmaps
-- **Phase-Based Learning**: Structured learning paths with clear milestones
-- **Progress Tracking**: Visual progress indicators and completion tracking
-- **Resource Recommendations**: Curated courses, books, and projects
-- **Skill Mapping**: Three-tier proficiency system (Practitioner, Intermediate, Professional)
-
-### 📅 Smart Scheduling
-- **Google Calendar Integration**: Schedule learning sessions and track progress
-- **Task Management**: Google Tasks integration for milestone tracking
-- **Reminder System**: Automated notifications for learning goals
-- **Progress Analytics**: Detailed insights into learning patterns
-
-### 👤 Profile Management
-- **Comprehensive Profiles**: Skills, interests, career goals, and learning preferences
-- **Skill Gap Analysis**: Identify missing skills for target careers
-- **Learning Preferences**: Customize learning style, format, and time commitment
-- **Career Goals Tracking**: Set and monitor long-term career objectives
-
-## 🏗️ Architecture
-
-### Backend Stack
-- **Node.js** with **Express.js** - RESTful API server
-- **MongoDB** with **Mongoose** - User data and career information storage
-- **ChromaDB** - Vector database for semantic search and RAG
-- **OpenAI GPT-4** - AI-powered recommendations and chatbot
-- **Google Cloud APIs** - Calendar and Tasks integration
-- **JWT Authentication** - Secure user authentication
-
-### Frontend Stack
-- **React.js 19** with **TypeScript** - Modern, type-safe frontend
-- **Material-UI v7** - Beautiful, responsive UI components
-- **React Router** - Client-side routing
-- **Recharts** - Data visualization and analytics
-- **Axios** - HTTP client for API communication
-
-### AI & ML Components
-- **LangChain** - AI application framework
-- **OpenAI Embeddings** - Text vectorization for semantic search
-- **RAG Pipeline** - Retrieval-Augmented Generation for accurate recommendations
-- **Vector Search** - Similarity-based career matching
+### Technology Stack
+- **Backend**: Node.js, Express.js, MongoDB, OpenAI GPT-4
+- **Frontend**: React.js, TypeScript, Material-UI
+- **AI/ML**: LangChain, ChromaDB (Vector Database)
+- **Cloud**: Google Cloud APIs (Calendar, Tasks)
+- **Authentication**: JWT, Google OAuth
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 - Node.js (v16 or higher)
-- MongoDB (local or Atlas)
-- Python 3.8+ (for ChromaDB)
+- MongoDB
 - OpenAI API Key
 - Google Cloud Project (for Calendar integration)
 
@@ -79,99 +32,94 @@ An intelligent platform that provides personalized career guidance and learning 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/personalized-career-advisor.git
-   cd personalized-career-advisor
+   git clone <repository-url>
+   cd personalizedai
    ```
 
 2. **Install dependencies**
    ```bash
-   # Install backend dependencies
-   npm install
-   
-   # Install frontend dependencies
-   cd client
-   npm install
-   cd ..
+   npm run install-all
    ```
 
-3. **Set up environment variables**
+3. **Environment Setup**
    ```bash
-   # Copy the example environment file
    cp env.example .env
-   
-   # Edit .env with your API keys
-   nano .env
    ```
-
-   Required environment variables:
+   
+   Update `.env` with your credentials:
    ```env
    MONGODB_URI=mongodb://localhost:27017/career-advisor
    OPENAI_API_KEY=your-openai-api-key
    GOOGLE_CLIENT_ID=your-google-client-id
    GOOGLE_CLIENT_SECRET=your-google-client-secret
-   JWT_SECRET=your-jwt-secret-key
-   CHROMA_HOST=localhost
-   CHROMA_PORT=8000
+   JWT_SECRET=your-jwt-secret
    ```
 
-4. **Set up databases**
+4. **Start the application**
    ```bash
-   # Start MongoDB (if using local instance)
-   mongod
-   
-   # Install and start ChromaDB
-   pip install chromadb
-   chroma run --host localhost --port 8000
-   ```
-
-5. **Start the application**
-   ```bash
-   # Start backend server
+   # Start backend
    npm run dev
    
-   # In another terminal, start frontend
-   cd client
-   npm start
+   # Start frontend (in another terminal)
+   npm run client
    ```
 
-6. **Access the application**
+5. **Access the application**
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:5000
 
 ## 📁 Project Structure
 
 ```
-personalized-career-advisor/
-├── client/                     # React frontend
-│   ├── public/
+personalizedai/
+├── client/                 # React frontend
 │   ├── src/
-│   │   ├── components/         # React components
-│   │   │   ├── Dashboard.tsx
-│   │   │   ├── CareerExplorer.tsx
-│   │   │   ├── LearningRoadmap.tsx
-│   │   │   ├── Profile.tsx
-│   │   │   ├── ChatBot.tsx
-│   │   │   └── Navbar.tsx
-│   │   ├── App.tsx
-│   │   └── index.tsx
-│   └── package.json
-├── models/                     # MongoDB models
+│   │   ├── components/     # React components
+│   │   ├── App.tsx        # Main app component
+│   │   └── index.tsx      # Entry point
+├── models/                 # MongoDB models
 │   ├── User.js
 │   ├── CareerPath.js
 │   └── LearningRoadmap.js
-├── routes/                     # API routes
+├── routes/                 # API routes
 │   ├── auth.js
 │   ├── careers.js
 │   ├── skills.js
 │   ├── roadmaps.js
 │   ├── chat.js
 │   └── calendar.js
-├── services/                   # Business logic
-│   └── ragService.js          # RAG system implementation
-├── server.js                  # Express server
-├── package.json
-└── README.md
+├── services/               # Business logic
+│   └── ragService.js      # RAG system
+├── server.js              # Express server
+└── package.json
 ```
+
+## 🎯 Key Components
+
+### 1. RAG System (`services/ragService.js`)
+- Fetches latest career data from job portals
+- Uses ChromaDB for vector storage and semantic search
+- Generates personalized recommendations using OpenAI
+
+### 2. Career Explorer
+- Interactive dashboard for exploring career paths
+- Filter by field (CSE, ECE, etc.) and domain
+- Detailed career information with skills and salary data
+
+### 3. Learning Roadmaps
+- Phase-based learning paths
+- Progress tracking with milestones
+- Resource recommendations and scheduling
+
+### 4. AI Chatbot
+- Context-aware conversations
+- Personalized career advice
+- Integration throughout the learning process
+
+### 5. Google Calendar Integration
+- Schedule learning sessions
+- Progress reminders
+- Task management
 
 ## 🔧 API Endpoints
 
@@ -179,108 +127,76 @@ personalized-career-advisor/
 - `POST /api/auth/register` - User registration
 - `POST /api/auth/login` - User login
 - `GET /api/auth/profile/:userId` - Get user profile
-- `PUT /api/auth/profile/:userId` - Update user profile
 
 ### Careers
 - `GET /api/careers/field/:field` - Get careers by field
-- `GET /api/careers/domain/:domain` - Get careers by domain
 - `POST /api/careers/recommendations` - Get AI recommendations
 - `GET /api/careers/search/:query` - Search careers
-- `GET /api/careers/trending/skills` - Get trending skills
 
 ### Skills
 - `GET /api/skills/user/:userId` - Get user skills
 - `POST /api/skills/user/:userId` - Add/update skill
-- `DELETE /api/skills/user/:userId/:skillName` - Remove skill
 - `POST /api/skills/recommendations` - Get skill recommendations
-- `POST /api/skills/gap-analysis` - Analyze skill gaps
 
-### Learning Roadmaps
+### Roadmaps
 - `GET /api/roadmaps/user/:userId` - Get user roadmaps
 - `POST /api/roadmaps` - Create new roadmap
-- `GET /api/roadmaps/:id` - Get roadmap details
 - `PUT /api/roadmaps/:id/progress` - Update progress
-- `DELETE /api/roadmaps/:id` - Delete roadmap
 
-### AI Chat
+### Chat
 - `POST /api/chat` - Send message to AI chatbot
 - `GET /api/chat/suggestions` - Get conversation suggestions
 
-### Calendar Integration
+### Calendar
 - `GET /api/calendar/events/:userId` - Get calendar events
 - `POST /api/calendar/events/:userId` - Create learning event
 - `POST /api/calendar/schedule/:userId` - Create learning schedule
-- `GET /api/calendar/auth-url` - Get Google OAuth URL
-- `POST /api/calendar/auth-callback` - Handle OAuth callback
 
-## 🤖 RAG System Implementation
-
-### Vector Database (ChromaDB)
-```javascript
-// Initialize ChromaDB collection
-const collection = await this.chroma.getOrCreateCollection({
-  name: 'career_requirements',
-  metadata: { description: 'Latest career requirements and job market data' }
-});
-
-// Add documents with embeddings
-await this.collection.add({
-  ids,
-  embeddings,
-  documents: texts,
-  metadatas: documents.map(doc => ({
-    type: doc.type || 'career_data',
-    lastUpdated: doc.lastUpdated || new Date().toISOString()
-  }))
-});
-```
-
-### Semantic Search
-```javascript
-// Search for similar careers
-const results = await this.collection.query({
-  queryEmbeddings: queryEmbedding,
-  nResults: limit,
-  where: field ? { field } : undefined
-});
-```
-
-### AI Recommendations
-```javascript
-// Generate personalized recommendations using GPT-4
-const response = await this.openai.chat.completions.create({
-  model: 'gpt-4',
-  messages: [{ role: 'user', content: prompt }],
-  max_tokens: 1500,
-  temperature: 0.7
-});
-```
-
-## 🎨 UI Components
+## 🎨 UI Features
 
 ### Dashboard
 - Personalized overview with career match scores
-- Skills progress visualization
+- Skills progress tracking
 - Learning roadmap preview
 - Quick access to recommendations
 
 ### Career Explorer
 - Interactive career cards with detailed information
-- Advanced filtering by field, domain, and skills
+- Advanced filtering and search
 - Salary ranges and job market insights
 - One-click roadmap creation
 
 ### Learning Roadmaps
 - Visual progress tracking with stepper component
-- Milestone management and completion tracking
-- Resource recommendations and scheduling
-- Calendar integration for learning sessions
+- Milestone management
+- Resource recommendations
+- Calendar integration
 
-### AI Chatbot
-- Context-aware conversations
-- Personalized career advice
-- Learning support and guidance
-- Integration throughout the platform
+### Profile Management
+- Comprehensive user profile
+- Skills and interests management
+- Learning preferences configuration
+- Career goals tracking
+
+## 🤖 AI Features
+
+### Personalized Recommendations
+- Career path matching based on user profile
+- Skill gap analysis
+- Learning resource recommendations
+- Job market insights
+
+### Intelligent Chatbot
+- Context-aware responses
+- Career guidance and advice
+- Learning support
+- Progress tracking assistance
+
+### RAG System
+- Real-time career data updates
+- Semantic search capabilities
+- Personalized content generation
+- Market trend analysis
 
 ## 🔐 Security Features
 
@@ -289,41 +205,17 @@ const response = await this.openai.chat.completions.create({
 - Google OAuth integration
 - Secure API endpoints
 - Input validation and sanitization
-- CORS configuration
 
 ## 🚀 Deployment
 
 ### Production Setup
+1. Set up MongoDB Atlas or self-hosted MongoDB
+2. Configure environment variables for production
+3. Set up Google Cloud project and OAuth credentials
+4. Deploy backend to cloud platform (Heroku, AWS, etc.)
+5. Deploy frontend to CDN (Netlify, Vercel, etc.)
 
-1. **Set up MongoDB Atlas**
-   ```bash
-   # Create cluster on MongoDB Atlas
-   # Get connection string
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/career-advisor
-   ```
-
-2. **Deploy Backend**
-   ```bash
-   # Deploy to Heroku, AWS, or DigitalOcean
-   git push heroku main
-   ```
-
-3. **Deploy Frontend**
-   ```bash
-   # Deploy to Netlify, Vercel, or AWS S3
-   cd client
-   npm run build
-   # Upload build folder to hosting service
-   ```
-
-4. **Set up ChromaDB**
-   ```bash
-   # Use ChromaDB Cloud or self-hosted instance
-   CHROMA_HOST=your-chroma-host
-   CHROMA_PORT=8000
-   ```
-
-### Environment Variables for Production
+### Environment Variables
 ```env
 NODE_ENV=production
 MONGODB_URI=your-production-mongodb-uri
@@ -331,60 +223,31 @@ OPENAI_API_KEY=your-openai-api-key
 GOOGLE_CLIENT_ID=your-google-client-id
 GOOGLE_CLIENT_SECRET=your-google-client-secret
 JWT_SECRET=your-production-jwt-secret
-CHROMA_HOST=your-chroma-host
-CHROMA_PORT=8000
 ```
-
-## 📊 Data Sources
-
-The RAG system fetches data from:
-- **Naukri.com** - Job market trends and requirements
-- **LinkedIn Learning** - Skills trends and course data
-- **Indeed India** - Salary data and job postings
-- **Glassdoor India** - Company reviews and insights
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🙏 Acknowledgments
 
-- **OpenAI** for GPT-4 API and embeddings
-- **Google Cloud** for Calendar and Tasks APIs
-- **Material-UI** for the component library
-- **ChromaDB** for vector database capabilities
-- **MongoDB** for data storage
-- **React** team for the amazing framework
+- OpenAI for GPT-4 API
+- Google Cloud for Calendar and Tasks APIs
+- Material-UI for the component library
+- ChromaDB for vector database capabilities
 
 ## 📞 Support
 
-For support and questions:
-- Open an issue in the repository
-- Contact the development team
-- Check the documentation
-
-## 🎯 Future Enhancements
-
-- [ ] Mobile app (React Native)
-- [ ] Advanced analytics dashboard
-- [ ] Integration with more job portals
-- [ ] Machine learning for better recommendations
-- [ ] Video interview preparation
-- [ ] Networking features
-- [ ] Mentorship matching
-- [ ] Industry-specific roadmaps
+For support and questions, please open an issue in the repository or contact the development team.
 
 ---
 
 **Built with ❤️ for Indian students pursuing their career dreams**
-
-*Empowering the next generation of tech professionals with AI-driven career guidance*
->>>>>>> f412e8b (Initial commit: project setup)
